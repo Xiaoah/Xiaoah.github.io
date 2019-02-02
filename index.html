@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="技术积累，经验分享，生活感悟">
+<meta name="keywords" content="Technology, Experience, Life">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mjcr&#39;s blogs">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -160,7 +161,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">technology,experience,life</p>
+        <p class="site-subtitle">Technology, Experience, Life</p>
       
   </div>
 
@@ -265,7 +266,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/Hexo-GithubPage-Next-搭建博客过程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mjcr Shaw">
+      <meta itemprop="name" content="John Doe">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -354,68 +355,14 @@
 
       
         
-          
-            <p>​    拖了许久的博客终于开始动工了，废话不多说了，第一篇就介绍下搭建博客的全过程。其实一直以来都很想搭个自己的博客，但因为平时比较忙、又在搭博客的多种方案中犹豫，结果拖延症发作….后来在上网上看到了这个Hexo+next主题的博客风格，感觉很清晰简洁，而且看了网上的教程感觉搭建也不难，然后这个假期终于开始动工。其实这种博客搭建过程网上教程很多，也很详细，下面主要是记录下搭建博客的过程。</p>
-<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>​    本博客框架主要是借助 前端Hexo博客框架+Next主题风格+GithubPage，需要提前安装好Git，注册GitHub账号，安装node.js。本系统环境为Win10。相关命令可以在git bash或者cmd下执行。</p>
-<h2 id="安装-Git、注册GitHub账号"><a href="#安装-Git、注册GitHub账号" class="headerlink" title="安装 Git、注册GitHub账号"></a>安装 Git、注册GitHub账号</h2><p>​    这个就不详细说了，可以参考网上相关的教程，可以参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的教程</a></p>
-<p>​    <strong>注意：因为后面要用到github远程仓库的ssh地址，因此要配置好本地Git到远程仓库的ssh，在Github的ssh setting中添加好本地的公钥</strong></p>
-<h2 id="建立-GitHub-Pages"><a href="#建立-GitHub-Pages" class="headerlink" title="建立 GitHub Pages"></a>建立 GitHub Pages</h2><p>​    建立过程很简单，就是直接建立一个新的仓库，New repository，然后项目的名字设置如下：<strong>GitHub用户名.github.io</strong>，比如我的是 Xiaoah.github.io。这样它就直接被视为一个GitHub Page了。</p>
-<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>​    下载安装Node.js，可以<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网下载</a> 。我下的是windows平台的node-v10.15.1-x64.msi。</p>
-<p>​    <strong>注意：建议下载最新版（最新稳定版），之前下过旧版的，在后面Hexo的一系列操作时出现各种问题，后来重新下了最新版的，就没问题了。</strong></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g	                     # 安装hexo</span><br><span class="line">hexo -v                                      # 验证是否安装成功 </span><br><span class="line">npm install hexo-deployer-git --save         # 安装hexo的git部署插件</span><br></pre></td></tr></table></figure>
-<p>Hexo 项目建立过程    </p>
-<p>​    进入目标目录下，比如我们希望把博客项目放在D:/blog/下，进入D:/blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init Xiaoah.github.io            # 初始化，这个项目名字最好和远程仓库的一致</span><br><span class="line">cd Xiaoah.git.io</span><br><span class="line">npm install                # 安装必要的文件</span><br><span class="line">hexo g                     # 或者hexo generate，生成静态文件，会在当前目录下生成一个新的public文件夹</span><br><span class="line">hexo s                     # 或者hexo server，启动服务，可以在localhost:4000下查看</span><br></pre></td></tr></table></figure>
-<p>​    Hexo中有一篇内置博客，到这一步可以在localhost:4000下看是否成功启动blog。</p>
-<h2 id="设置主题NexT"><a href="#设置主题NexT" class="headerlink" title="设置主题NexT"></a>设置主题NexT</h2><p>​    关于NexT主题的介绍和使用可以参考其<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">官方文档</a> 。clone NexT源码到项目根目录下（Xiaoah.github.io）,网上有些说法是到项目目录下的theme文件夹下，我好像是下到了项目根目录下。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>​    修改项目根目录下的_config.yml 文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<p>​    重启项目看下效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h2 id="部署到GitHub-Page上"><a href="#部署到GitHub-Page上" class="headerlink" title="部署到GitHub Page上"></a>部署到GitHub Page上</h2><p>​    要将Hexo部署到GitHub Page，首先要确保hexo的git部署插件已经安装（见前面nodejs的安装部分），然后修改果根目录下的配置文件_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Xiaoah/Xiaoah.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>​    部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c     # 或者 hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d     # 或者 hexo deploy</span><br></pre></td></tr></table></figure>
-<p>关于Hexo的相关启动命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo c    # hexo clean 清除</span><br><span class="line">hexo g    # hexo generate 生成</span><br><span class="line">hexo s    # hexo server 启动</span><br><span class="line">hexo d    # hexo deploy 部署</span><br></pre></td></tr></table></figure>
-<h2 id="如何开始写一篇-Blog"><a href="#如何开始写一篇-Blog" class="headerlink" title="如何开始写一篇 Blog"></a>如何开始写一篇 Blog</h2><p>首先可以先进行一些基本的配置，通过修改根目录下的_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: Mjcr&apos;s blogs                              # 博客title</span><br><span class="line">subtitle: Technology, Experience, Life           # 子title</span><br><span class="line">description: 技术积累，经验分享，生活感悟          # 描述</span><br><span class="line">#keywords: 技术积累，经验分享，生活感悟</span><br><span class="line">author: Mjcr Shaw                                # 作者</span><br><span class="line">language: zh-Hans                                # 语言</span><br></pre></td></tr></table></figure>
-<p>然后开始写新文章了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;文章标题&quot;     # 新建文章 同hexo n &quot;文章标题&quot;, post 是layout，可选，默认是post</span><br></pre></td></tr></table></figure>
-<p>新建完后会在source/_posts下多了一个md文件，直接在该文件里写博客就好了。</p>
-<h2 id="关于Hexo的一些配置"><a href="#关于Hexo的一些配置" class="headerlink" title="关于Hexo的一些配置"></a>关于Hexo的一些配置</h2><p>​    关于Hexo的相关配置使用可以参考<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官方文档</a> </p>
-<ol>
-<li><p>创建“分类”选项</p>
-<p>在项目根目录下，执行</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>​    成功后会生成source/categories/index.md，打开进行修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 文章分类</span><br><span class="line">date: 2019-02-01 18:26:43</span><br><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
-<p>​    保存关闭文件。接下来给文章添加“categories”属性，打开需要分类的文章，添加categories属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo+GithubPage+Next 搭建博客过程</span><br><span class="line">date: 2019-02-01 17:40:49</span><br><span class="line">categories: blog搭建</span><br></pre></td></tr></table></figure>
-<p>该文章会被添加到 “blog搭建”的类别下。</p>
-<ol start="2">
-<li><p>创建“标签”选项</p>
-<p>在项目根目录下，执行命令</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>​    成功后会生成source/tags/index.md，打开进行修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2019-02-01 19:16:05</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
-<p>​    保存关闭文件。接下来给文章添加“tags”属性，打开需要贴标签的文章，添加tags属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: Hexo+GithubPage+Next 搭建博客过程</span><br><span class="line">date: 2019-02-01 17:40:49</span><br><span class="line">tags: Hexo</span><br><span class="line">categories: blog搭建</span><br></pre></td></tr></table></figure>
-<p>​    <em>至此，会发现新增标签和分类做法其实都一样。其实，新建文章时，它是根据scaffolds/post.md这个文件来建立模板的；scaffolds文件夹下的是新建文章的模板文件，我们 hexo new ‘title’ 是默认的模板是post，就根据那个post.md来建立，我们可以直接对post.md模板文件修改来个性化定制</em></p>
-<ol start="3">
-<li><p>首页标题栏依然不见“分类”、“标签” 等菜单？</p>
-<p>需要对themes/next/_config.yml进行配置</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br></pre></td></tr></table></figure>
-
-          
+          <p>​    拖了许久的博客终于开始动工了，废话不多说了，第一篇就介绍下搭建博客的全过程。其实一直以来都很想搭个自己的博客，但因为平时比较忙、又在搭博客的多种方案中犹豫，结果拖延症发作….后来在上网上看到了这个Hexo+next主题的博客风格，感觉很清晰简洁，而且看了网上的教程感觉搭建也不难，然后这个假期终于开始动工。其实这种博客搭建过程网上教程很多，也很详细，下面主要是记录下搭建博客的过程。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/01/Hexo-GithubPage-Next-搭建博客过程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -484,7 +431,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Mjcr Shaw</p>
+              <p class="site-author-name" itemprop="name">John Doe</p>
               <p class="site-description motion-element" itemprop="description">技术积累，经验分享，生活感悟</p>
           </div>
 
@@ -558,7 +505,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Mjcr Shaw</span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
 
   
 </div>
